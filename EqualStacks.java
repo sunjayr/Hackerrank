@@ -95,6 +95,7 @@ public class EqualStacks {
         if( !height_reached ){
             System.out.println(0);
         }
+        in.close();
     }
     
     //helper function to find the max out of the three stacks
