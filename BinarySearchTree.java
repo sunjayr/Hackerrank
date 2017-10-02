@@ -17,6 +17,14 @@ public class BinarySearchTree{
         test.insert(5);
         test.printLevelOrder();
         test.printInOrder();
+        int value = 5;
+        boolean result = test.find(value);
+        if(result){
+            System.out.println("Value " + value + " Found!");
+        }
+        else{
+            System.out.println("Value " + value + " Not Found!");
+        }
     }
 }
 class Tree{
@@ -85,6 +93,26 @@ class Tree{
         System.out.println(node.data);
         printInOrder(node.right);
 
+    }
+
+    public boolean find(int value){
+        if( this.root == null ){
+            System.out.println("No nodes in tree");
+            return false;
+        }
+        TreeNode currentNode = this.root;
+        while( currentNode != null ){
+            if( value < currentNode.data ){
+                currentNode = currentNode.left;
+            }
+            else if( value > currentNode.data){
+                currentNode = currentNode.right;
+            }
+            else{
+                return true;
+            }
+        }
+        return false;
     }
 }
 class TreeNode{
